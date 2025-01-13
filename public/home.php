@@ -96,19 +96,22 @@
         }
 
         .about {
-          border: 1px solid var(--bs-indigo);
-          border-radius: 4px;
+          border: 1px solid #5a23c8;
+          border-radius: 3px;
+          background-color: var(--bs-indigo) !important;
+
         }
 
-        .about .link-body-emphasis {
+        .about .link-body-emphasis:hover {
           color:  #6610F2 !important;
+          background-color: whitesmoke !important;
+          text-decoration: none;
         }
 
-        .about .link-body-emphasis:hover
+        .about .link-body-emphasis
          {
           background-color: var(--bs-indigo) !important;
           color: whitesmoke !important;
-          text-decoration: none;
         }
 
   @media (min-width: 768px) {
@@ -216,7 +219,7 @@
 
         </ul>
 
-        <ul class="nav me-3 mb-2 justify-content-center mb-md-0">
+        <ul class="nav me-3 mb-2 justify-content-center mb-md-0" style="background-color: indigo; border-radius: 3px;">
             <li class="about"><a class="nav-link link-body-emphasis" href="#">About</a></li>
           </ul>
 
