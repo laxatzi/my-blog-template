@@ -87,7 +87,7 @@
          }
 
         .link-body-emphasis:hover {
-            color: var(--bs-indigo) !important;
+            text-decoration: underline;
           }
 
          .link-secondary {
@@ -108,6 +108,7 @@
          {
           background-color: var(--bs-indigo) !important;
           color: whitesmoke !important;
+          text-decoration: none;
         }
 
   @media (min-width: 768px) {
