@@ -1,0 +1,33 @@
+.btn-custom {
+  background-color: var(--bs-indigo);
+  color: white;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+  background-color: var(--bs-purple);
+  color: white;
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-indigo);
+  border-color: var(--bs-indigo);
+}
+
+.dash-icons {
+  max-width: 15px;
+  max-height: auto;
+}
+
+.offcanvas-body .nav-item a.nav-link {
+  color: var(--bs-indigo);
+}
+
+.logo-img {
+  object-fit: contain;
+  border: 2px solid #461395;
+  background-color: #fbf3f3;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 255, 0.1);
+  width: 100px;
+  height: 100px;
+}
