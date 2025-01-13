@@ -243,7 +243,7 @@
     <div class="row g- d-flex justify-content-center align-items-center">
       <div class="col-md-8 mb-5 ms-5 ms-md-2">
         <section class="intro">
-          <h1 class="col-sm-10 col-md-8 ln-base">Welcome to my blog! I write about web technologies, JavaScript, PHP, HTML/CSS and MySql.</h1>
+          <h1 class="col-sm-10 col-md-8 ln-base pt-4">Welcome to my blog! I write about web technologies, JavaScript, PHP, HTML/CSS and MySql.</h1>
           <div class="divider pt-5"></div>
         </section>
         <section class="blogpost-array">
