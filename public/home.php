@@ -90,6 +90,10 @@
             text-decoration: underline;
           }
 
+        .link-body-emphasis:focus {
+          outline-color: red !important;
+        }
+
          .link-secondary {
 	         color: var(--bs-indigo) !important;
 
@@ -113,6 +117,13 @@
           background-color: var(--bs-indigo) !important;
           color: whitesmoke !important;
         }
+
+        .about .link-body-emphasis:focus
+         {
+          outline-color: red;
+         }
+
+
 
   @media (min-width: 768px) {
         .bd-placeholder-img-lg {
