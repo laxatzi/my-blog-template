@@ -100,15 +100,15 @@
           border-radius: 4px;
         }
 
-        /* .about:hover,
-        .about:hover ul,
-        .about:focus {
+        .about .link-body-emphasis {
+          color:  #6610F2 !important;
+        }
+
+        .about .link-body-emphasis:hover
+         {
           background-color: var(--bs-indigo) !important;
           color: whitesmoke !important;
-        } */
-
-
-
+        }
 
   @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -117,10 +117,7 @@
 
           .h-md-250 { height: 250px; }
       }
-
-
     </style>
-
 
     <!-- Custom styles for this template -->
     <link href="assets/css/headers.css" rel="stylesheet">
