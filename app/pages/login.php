@@ -171,7 +171,7 @@
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
-    <small class="my-2">Don't have an account yet? <a href="register.php">Register here</a></small>
+    <small class="my-2">Don't have an account yet? <a href="register">Register here</a></small>
 
     <div class="form-check text-start my-3">
       <input name="remember" class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
