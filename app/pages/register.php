@@ -156,7 +156,9 @@
 
 <main class="form-signin w-100 m-auto">
   <form>
-    <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="assets/images/logo.png" alt="" width="100" height="100">
+    <a href="home">
+      <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="assets/images/logo.png" alt="" width="100" height="100">
+    </a>
     <h1 class="h3 mb-3 fw-normal">Please Join Us</h1>
     <div class="form-floating">
       <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
