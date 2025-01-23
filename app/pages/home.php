@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <title>Home | My PHP Blog</title>
 
-   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   <link href="assets/css/main.css">
+   <link href="<?=ROOT?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="<?=ROOT?>assets/css/main.css">
 
     <style>
      body {
@@ -135,7 +135,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/headers.css" rel="stylesheet">
+    <link href="<?=ROOT?>assets/css/headers.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -217,7 +217,7 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none me-2">
-          <img class=  "logo-img mx-auto d-block rounded-circle" src="assets/images/logo.png" alt="blog's logotype" width="50" height="50" >
+          <img class=  "logo-img mx-auto d-block rounded-circle" src="<?=ROOT?>assets/images/logo.png" alt="blog's logotype" width="50" height="50" >
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -304,7 +304,6 @@
   </div>
 </main>
 <section class="container-fluid" style="background-color: var(--bs-indigo);">
-
     <div class="py-5 row d-flex justify-content-center align-items-center">
       <div class="my-5 col-8 col-md-6 col-lg-5 col-xl-4 col-xxl-3 mb-3 d-flex justify-content-center align-items-center flex-column" style="color: white;">
         <form>
@@ -373,7 +372,7 @@
     </div>
   </footer>
 </div>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=ROOT?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
