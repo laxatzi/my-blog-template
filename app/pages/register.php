@@ -174,7 +174,7 @@
       <input name="retyped-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
       <label for="floatingPassword">Retype Password</label>
     </div>
-        <small class="my-2">Already have an account? <a href="login.php">Login here</a></small>
+        <small class="my-2">Already have an account? <a href="login">Login here</a></small>
 
      <div class="form-check text-start my-2">
       <input name="accepting-terms" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
