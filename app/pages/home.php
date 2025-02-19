@@ -231,7 +231,7 @@
         </ul>
 
         <ul class="nav me-3 mb-2 justify-content-center mb-md-0" style="background-color: indigo; border-radius: 3px;">
-            <li class="about"><a class="nav-link link-body-emphasis" href="#">About</a></li>
+            <li class="about"><a class="nav-link link-body-emphasis" href="<?=ROOT?>/about">About</a></li>
           </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
