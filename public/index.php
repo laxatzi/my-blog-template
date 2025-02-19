@@ -1,5 +1,7 @@
 <?php
-  define('ROOT', 'https://localhost/my_blog_template/public');
+
+  require "../app/core/init.php";
+
   $url = $_GET['url'] ?? 'home';
   $url = explode('/', $url);
 
