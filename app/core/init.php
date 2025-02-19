@@ -1,0 +1,4 @@
+<?php
+
+   // Loads required files
+
