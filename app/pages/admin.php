@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Admin | My PHP Blog</title>
+    <title>Admin | <?=APP_NAME?></title>
     <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/bootstrap-icons.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
