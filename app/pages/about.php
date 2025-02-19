@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Home | My PHP Blog</title>
-
-   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   <link href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/main.css">
 
     <style>
      body {
@@ -143,7 +143,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/headers.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/headers.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -225,7 +225,7 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none me-2">
-          <img class=  "logo-img mx-auto d-block rounded-circle" src="assets/images/logo.png" alt="blog's logotype" width="50" height="50" >
+          <img class=  "logo-img mx-auto d-block rounded-circle" src="<?=ROOT?>/assets/images/logo.png" alt="blog's logotype" width="50" height="50" >
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -267,12 +267,12 @@
         <div class="image-display d-flex g-2">
           <figure class="d-flex me-2">
             <div class="image-wrapper">
-              <img src="assets/images/group-people-working-about.png" alt="image depicting a group of people working on the office">
+              <img src="<?=ROOT?>/assets/images/group-people-working-about.png" alt="image depicting a group of people working on the office">
             </div>
           </figure>
           <figure class="d-flex ms-2">
             <div class="image-wrapper">
-              <img src="assets/images/team-of-programmers-working-about.png" alt="image depicting a team of programmers working">
+              <img src="<?=ROOT?>/assets/images/team-of-programmers-working-about.png" alt="image depicting a team of programmers working">
             </div>
           </figure>
         </div>
@@ -350,7 +350,7 @@
     </div>
   </footer>
 </div>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

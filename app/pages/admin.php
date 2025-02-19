@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Admin | My PHP Blog</title>
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -92,7 +92,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/dashboard.css" rel="stylesheet">
   </head>
   <body>
      <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -229,7 +229,7 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
-                <img class="dash-icons" src="assets/images/icons/icons8-speedometer-50.png">Dashboard
+                <img class="dash-icons" src="<?=ROOT?>/assets/images/icons/icons8-speedometer-50.png">Dashboard
               </a>
             </li>
           </ul>
@@ -243,7 +243,7 @@
           <ul class="nav flex-column mb-auto">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
-                 <img class="dash-icons" src="assets/images/icons/icons8-home-50.png">Front End
+                 <img class="dash-icons" src="<?=ROOT?>/assets/images/icons/icons8-home-50.png">Front End
               </a>
             </li>
           </ul>
@@ -253,12 +253,12 @@
           <ul class="nav flex-column mb-auto">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <img class="dash-icons" src="assets/images/icons/icons8-settings-50.png">Settings
+                <img class="dash-icons" src="<?=ROOT?>/assets/images/icons/icons8-settings-50.png">Settings
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <img class="dash-icons" src="assets/images/icons/icons8-log-out-50.png">Sign out
+                <img class="dash-icons" src="<?=ROOT?>/assets/images/icons/icons8-log-out-50.png">Sign out
               </a>
             </li>
           </ul>
@@ -288,10 +288,10 @@
     </main>
   </div>
 </div>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
 
-    <script src="assets/js/dashboard.js"></script>
+    <script src="<?=ROOT?>/assets/js/dashboard.js"></script>
   </body>
 </html>

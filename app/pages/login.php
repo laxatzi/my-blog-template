@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Login | My PHP Blog</title>
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -103,7 +103,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/sign-in.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/sign-in.css" rel="stylesheet">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -161,7 +161,7 @@
 <main class="form-signin w-100 m-auto">
   <form>
     <a href="home">
-      <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="assets/images/logo.png" alt="" width="100" height="100">
+      <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="<?=ROOT?>/assets/images/logo.png" alt="" width="100" height="100">
     </a>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -173,7 +173,7 @@
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
-    <small class="my-2">Don't have an account yet? <a href="register">Register here</a></small>
+    <small class="my-2">Don't have an account yet? <a href="<?=ROOT?>/register">Register here</a></small>
 
     <div class="form-check text-start my-3">
       <input name="remember" class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
@@ -185,7 +185,7 @@
     <p class="mt-5 mb-3 text-body-secondary">&copy;<?php echo date('Y');?></p>
   </form>
 </main>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>
