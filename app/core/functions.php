@@ -3,8 +3,11 @@
   create_tables();
 
   function create_tables() {
-    $string = "mysql:hostname=localhost;";
-    $con = new PDO($string, DBUSER, DBPASS);
+	$str = "mysql:hostname=localhost;";
+    $conn = new PDO($str, DBUSER, DBPASS);
 
-    print_r($con);
+    $query = "create database if not exists ".DBNAME;
+
+    $stm = $conn->prepare($query);
+    $stm->execute();
   }
