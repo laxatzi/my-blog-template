@@ -1,5 +1,5 @@
 <?php
-
+  // init is the only file we require here.
   require "../app/core/init.php";
 
   $url = $_GET['url'] ?? 'home';
