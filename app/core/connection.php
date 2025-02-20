@@ -1,7 +1,7 @@
 <?php
 
 
-// reduce back and forth changing of the same code while working in a local environment
+// while we work back and forth on a local environment we cannot redefine constants so we set them once for each environment.
 
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
   define('DBUSER', 'root');
