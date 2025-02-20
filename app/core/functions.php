@@ -1,6 +1,8 @@
 <?php
   // create a function that creates tables | when function called it will make a db connection and run the tables that we need
-  create_tables();
+
+ // No need to keep running provided that we have already created the necessary tables
+ // create_tables();
 
   function create_tables() {
 	$str = "mysql:hostname=localhost;";
