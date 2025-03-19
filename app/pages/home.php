@@ -216,7 +216,7 @@
 <header class="p-3 mb-3 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none me-2">
+        <a href="<?=ROOT?>/home" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none me-2">
           <img class=  "logo-img mx-auto d-block rounded-circle" src="<?=ROOT?>/assets/images/logo.png" alt="blog's logotype" width="50" height="50" >
         </a>
 
@@ -332,7 +332,7 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
           <li class="nav-item mb-2"><a href="<?=ROOT?>/login" class="nav-link p-0 text-body-secondary">Login</a></li>
           <li class="nav-item mb-2"><a href="<?=ROOT?>/about" class="nav-link p-0 text-body-secondary">About</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Subscribe</a></li>
+          <li class="nav-item mb-2"><a href="<?=ROOT?>/register" class="nav-link p-0 text-body-secondary">Subscribe</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
