@@ -1,11 +1,32 @@
 <?php
+
+
+
+ function db_query(string $query, array $data = []) {
+	$str = "mysql:hostname=".DBHOST.";dbname=".DBNAME;
+    $conn = new PDO($str, DBUSER, DBPASS);
+
+// Create database
+
+    $query = "CREATE DATABASE IF NOT EXISTS ".DBNAME;
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		if (is_array($result) && !empty($result)) {
+			return $result;
+		}
+    return false;
+ }
+
   // create a function that creates tables | when function called it will make a db connection and run the tables that we need
 
  // No need to keep running provided that we have already created the necessary tables. So we just mute the calling function (//)
  // create_tables();
 
   function create_tables() {
-	$str = "mysql:hostname=localhost;";
+	$str = "mysql:hostname=".DBHOST.";";
     $conn = new PDO($str, DBUSER, DBPASS);
 
 // Create database
