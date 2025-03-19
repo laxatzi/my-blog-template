@@ -1,7 +1,7 @@
 <?php
 
 
-
+// run Database-queries function
  function db_query(string $query, array $data = []) {
 	$str = "mysql:hostname=".DBHOST.";dbname=".DBNAME;
     $conn = new PDO($str, DBUSER, DBPASS);
