@@ -3,11 +3,36 @@
     // validate
     $errors = [];
 
-    // If fields empty or other errors
+    //// If fields empty or other errors
+
+    // username errors
+    // username should be not empty, should include only letters (no spaces)
     if (empty($_POST['username'])) {
       $errors['username'] = "A username is required!";
     } else if (!preg_match("/^[a-zA-Z]+$/", $_POST['username'])){
         $errors['username'] = "Username can only have letters and no spaces";
+    }
+
+    // email errors
+    // email field should not be empty, should be unique, and be valid
+    $query = "select id from users where email = :email limit 1";
+    $email = db_query($query, ['email'=>$_POST['email']]);
+    if (empty($_POST['email'])) {
+      $errors['email'] = "An email is required!";
+    } else if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+      $errors['email'] = "Email is NOT valid";
+    } else if ($email) {
+      $errors['email'] = "That email is already in use";
+    }
+
+    // password errors
+
+     if(empty($_POST['password'])) {
+      $errors['password'] = "A password is required";
+    } else if(strlen($_POST['password']) < 8) {
+      $errors['password'] = "Password must be 8 character or more";
+    } else if($_POST['password'] !== $_POST['retype_password']) {
+      $errors['password'] = "Passwords do not match";
     }
 
 
