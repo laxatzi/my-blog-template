@@ -29,10 +29,20 @@ function redirect($page)
 }
 
 // Retrieve old value
-function retrieve_info($old_val) {
-	if (!empty($_POST[$old_val])) return $_POST[$old_val];
+function retrieve_info($key, $default = '') {
+	if (!empty($_POST[$key]))
+	  return $_POST[$key];
+	return $default;
+}
+
+function retrieve_checked($key, $default = '')
+{
+	if(!empty($_POST[$key]))
+		return " checked ";
+
 	return "";
 }
+
 
 
   // create a function that creates tables | when function called it will make a db connection and run the tables that we need
