@@ -219,6 +219,9 @@
       <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="<?=ROOT?>/assets/images/logo.png" alt="" width="100" height="100">
     </a>
     <h1 class="h3 mb-3 fw-normal">Please Join Us</h1>
+    <?php if (!empty($errors)):?>
+      <div class="alert alert-danger">Please fix the errors below</div>
+    <?php endif;?>
     <div class="form-floating">
       <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
       <label for="floatingInput">User name</label>
