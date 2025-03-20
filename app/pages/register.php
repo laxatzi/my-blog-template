@@ -1,4 +1,21 @@
 <?php
+  if (!empty($_POST)) {
+    // validate
+    $errors = [];
+    if (empty($errors)) {
+      // save to db
+      $data = [];
+      $data['username'] = $_POST['username'];
+      $data['email'] = $_POST['email'];
+      $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $data['role'] = $_POST['role'];
+
+      $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
+      db_query($query, $data);
+
+      //redirect('login');
+    }
+  }
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -155,7 +172,7 @@
 
 
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method="post">
     <a href="home">
       <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="<?=ROOT?>/assets/images/logo.png" alt="" width="100" height="100">
     </a>
