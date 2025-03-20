@@ -2,6 +2,15 @@
   if (!empty($_POST)) {
     // validate
     $errors = [];
+
+    // If fields empty or other errors
+    if (empty($_POST['username'])) {
+      $errors['username'] = "A username is required!";
+    } else if (!preg_match("/^[a-zA-Z]+$/", $_POST['username'])){
+        $errors['username'] = "Username can only have letters and no spaces";
+    }
+
+
     if (empty($errors)) {
       // save to db
       $data = [];
@@ -13,7 +22,7 @@
       $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
       db_query($query, $data);
 
-      //redirect('login');
+      redirect('login');
     }
   }
 ?>
