@@ -26,13 +26,21 @@
     }
 
     // password errors
-
+    // password should not be empty, must be bigger than 8 chars must be retyped correctly
      if(empty($_POST['password'])) {
       $errors['password'] = "A password is required";
     } else if(strlen($_POST['password']) < 8) {
       $errors['password'] = "Password must be 8 character or more";
     } else if($_POST['password'] !== $_POST['retype_password']) {
       $errors['password'] = "Passwords do not match";
+    }
+
+    // accept terms errors
+    // input should not be empty
+
+  if(empty($_POST['terms']))
+    {
+      $errors['terms'] = "Please accept the terms";
     }
 
 
