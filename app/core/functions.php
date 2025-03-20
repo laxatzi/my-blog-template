@@ -28,6 +28,12 @@ function redirect($page)
 	die;
 }
 
+// Retrieve old value
+function retrieve_info($old_val) {
+	if (!empty($_POST[$old_val])) return $_POST[$old_val];
+	return "";
+}
+
 
   // create a function that creates tables | when function called it will make a db connection and run the tables that we need
 
