@@ -20,6 +20,15 @@
     return false;
  }
 
+// Redirect Page
+function redirect($page)
+{
+
+	header('Location: '.ROOT. '/' . $page);
+	die;
+}
+
+
   // create a function that creates tables | when function called it will make a db connection and run the tables that we need
 
  // No need to keep running provided that we have already created the necessary tables. So we just mute the calling function (//)
