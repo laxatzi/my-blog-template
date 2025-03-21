@@ -40,7 +40,7 @@ function retrieve_checked($key, $default = '')
 	if(!empty($_POST[$key]))
 		return " checked ";
 
-	return "";
+	return $default;
 }
 
 
