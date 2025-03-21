@@ -76,6 +76,7 @@
     <meta name="description" content="">
     <title>Register | <?=APP_NAME?></title>
     <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/bootstrap-icons.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
 
     <style>
@@ -248,7 +249,7 @@
     <?php endif;?>
   <!-- Password -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" >
       <label for="floatingPassword">Password</label>
     </div>
     <?php if(!empty($errors['password'])):?>
