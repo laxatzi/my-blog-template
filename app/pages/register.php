@@ -69,14 +69,16 @@
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="<?=ROOT?>/assets/js/color-modes.js"></script>
+  <head>
+    <script src="<?=ROOT?>/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Register | <?=APP_NAME?></title>
     <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=ROOT?>/assets/css/bootstrap-icons.css" rel="stylesheet">
+       <!-- Custom styles for this template -->
+    <link href="<?=ROOT?>/assets/css/sign-in.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
 
     <style>
@@ -163,11 +165,38 @@
         background-color: #FBF3F3;
         box-shadow: 3px 3px 2px 2px rgba(0, 0, 255, .1);
       }
+
+      .form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
     </style>
 
 
-    <!-- Custom styles for this template -->
-    <link href="<?=ROOT?>/assets/css/sign-in.css" rel="stylesheet">
+
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -222,7 +251,7 @@
     </div>
 
 
-<main class="form-signin w-100 m-auto">
+<main class="form-signin w-100 m-auto" id=formSignin>
   <form method="post">
     <a href="home">
       <img class="mb-4 rounded-circle logo-img mx-auto d-block" src="<?=ROOT?>/assets/images/logo.png" alt="" width="100" height="100">
@@ -233,7 +262,7 @@
     <?php endif;?>
   <!-- Username -->
     <div class="form-floating">
-      <input value="<?= retrieve_info('username') ?>" name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
+      <input value="<?= retrieve_info('username') ?>" name="username" type="text" class="form-control" id="floatingInput js--floatingInput" placeholder="Username">
       <label for="floatingInput">User name</label>
     </div>
     <?php if(!empty($errors['username'])):?>
@@ -241,7 +270,7 @@
     <?php endif;?>
   <!-- Email -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('email') ?>" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input value="<?= retrieve_info('email') ?>" name="email" type="email" class="form-control" id="floatingInput js--floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <?php if(!empty($errors['email'])):?>
@@ -249,7 +278,7 @@
     <?php endif;?>
   <!-- Password -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" >
+      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control password" id="floatingPassword js--floatingPassword" placeholder="Password" >
       <label for="floatingPassword">Password</label>
     </div>
     <?php if(!empty($errors['password'])):?>
@@ -257,7 +286,7 @@
     <?php endif;?>
   <!-- Password Retype -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
+      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Retype Password">
       <label for="floatingPassword">Retype Password</label>
     </div>
     <?php if(!empty($errors['retype_password'])):?>
