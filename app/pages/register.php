@@ -31,7 +31,14 @@
       $errors['password'] = "A password is required";
     } else if(strlen($_POST['password']) < 8) {
       $errors['password'] = "Password must be 8 character or more";
-    } else if($_POST['password'] !== $_POST['retype_password']) {
+    }
+
+    // retype password errors
+    // retype password field should not be empty, and must much password
+    if(empty($_POST['retype_password'])) {
+      $errors['retype_password'] = "Please confirm password!";
+    }
+    else if($_POST['password'] !== $_POST['retype_password']) {
       $errors['password'] = "Passwords do not match";
     }
 
@@ -50,6 +57,7 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
       $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
@@ -251,7 +259,11 @@
       <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
       <label for="floatingPassword">Retype Password</label>
     </div>
-        <small class="my-2">Already have an account? <a href="login">Login here</a></small>
+    <?php if(!empty($errors['retype_password'])):?>
+      <div class="text-danger"><?=$errors['retype_password']?></div>
+    <?php endif;?>
+
+    <small class="my-2">Already have an account? <a href="login">Login here</a></small>
   <!-- Terms -->
      <div class="form-check text-start my-2">
       <input <?=retrieve_checked('terms')?> name="terms" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
