@@ -19,7 +19,7 @@
     $email = db_query($query, ['email'=>$_POST['email']]);
     if (empty($_POST['email'])) {
       $errors['email'] = "An email is required!";
-    } else if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
       $errors['email'] = "Email is NOT valid";
     } else if ($email) {
       $errors['email'] = "That email is already in use";
@@ -223,6 +223,7 @@
     <?php if (!empty($errors)):?>
       <div class="alert alert-danger">Please fix the errors below</div>
     <?php endif;?>
+  <!-- Username -->
     <div class="form-floating">
       <input value="<?= retrieve_info('username') ?>" name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
       <label for="floatingInput">User name</label>
@@ -230,7 +231,7 @@
     <?php if(!empty($errors['username'])):?>
       <div class="text-danger"><?=$errors['username']?></div>
     <?php endif;?>
-
+  <!-- Email -->
     <div class="form-floating my-1">
       <input value="<?= retrieve_info('email') ?>" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
@@ -238,6 +239,7 @@
     <?php if(!empty($errors['email'])):?>
       <div class="text-danger"><?=$errors['email']?></div>
     <?php endif;?>
+  <!-- Password -->
     <div class="form-floating my-1">
       <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
@@ -245,13 +247,13 @@
     <?php if(!empty($errors['password'])):?>
       <div class="text-danger"><?=$errors['password']?></div>
     <?php endif;?>
-
+  <!-- Password Retype -->
     <div class="form-floating my-1">
       <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
       <label for="floatingPassword">Retype Password</label>
     </div>
         <small class="my-2">Already have an account? <a href="login">Login here</a></small>
-
+  <!-- Terms -->
      <div class="form-check text-start my-2">
       <input <?=retrieve_checked('terms')?> name="terms" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
@@ -262,7 +264,7 @@
       <?php endif;?>
     </div>
     <button class="btn btn-custom w-100 py-2" type="submit">Register</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy;<?php echo date('Y');?></p>
+    <p class="mt-5 mb-3 text-body-secondary">Copyright&copy;<?php echo date('Y');?></p>
   </form>
 </main>
 <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
