@@ -50,6 +50,7 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $data['password_retype'] =  password_hash($_POST['password_retype'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
       $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
@@ -223,28 +224,42 @@
       <div class="alert alert-danger">Please fix the errors below</div>
     <?php endif;?>
     <div class="form-floating">
-      <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
+      <input value="<?= retrieve_info('username') ?>" name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
       <label for="floatingInput">User name</label>
     </div>
+    <?php if(!empty($errors['username'])):?>
+      <div class="text-danger"><?=$errors['username']?></div>
+    <?php endif;?>
+
     <div class="form-floating my-1">
-      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input value="<?= retrieve_info('email') ?>" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
+    <?php if(!empty($errors['email'])):?>
+      <div class="text-danger"><?=$errors['email']?></div>
+    <?php endif;?>
     <div class="form-floating my-1">
-      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
+    <?php if(!empty($errors['password'])):?>
+      <div class="text-danger"><?=$errors['password']?></div>
+    <?php endif;?>
+
     <div class="form-floating my-1">
-      <input name="retyped-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
+      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword" placeholder="Retype Password">
       <label for="floatingPassword">Retype Password</label>
     </div>
         <small class="my-2">Already have an account? <a href="login">Login here</a></small>
 
      <div class="form-check text-start my-2">
-      <input name="accepting-terms" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <input <?=retrieve_checked('terms')?> name="terms" class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
         Accept Terms
       </label>
+      <?php if(!empty($errors['terms'])):?>
+        <div class="text-danger"><?=$errors['terms']?></div>
+      <?php endif;?>
     </div>
     <button class="btn btn-custom w-100 py-2" type="submit">Register</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy;<?php echo date('Y');?></p>
