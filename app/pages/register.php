@@ -50,7 +50,6 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
-      $data['password_retype'] =  password_hash($_POST['password_retype'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
       $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
