@@ -167,38 +167,62 @@
       }
 
       .form-signin {
-  max-width: 330px;
-  padding: 1rem;
-}
+        max-width: 330px;
+        padding: 1rem;
+      }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
+    .form-signin .form-floating:focus-within {
+        z-index: 2;
+      }
 
-.form-signin input[type="email"] {
-  margin-bottom: 10px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
+    .form-signin input[type="email"] {
+      margin-bottom: 7px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
 
-.form-signin input[type="text"] {
-  margin-bottom: 10px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
+    .form-signin input[type="text"] {
+      margin-bottom: 7px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
 
+    .form-signin input[type="password"] {
+        margin-bottom: 0px;
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-    </style>
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
 
+    .form-controller {
+      display: flex;
+      border: 1px solid #dee2e6;
+      background-color: #fff;
+      margin-bottom: 7px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      padding: .75rem .75rem;
+    }
 
+    .form-controller img {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
 
-  </head>
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+    }
+
+    .form-controller .form-control {
+      padding: 0rem 0rem;
+      border: 1px solid transparent;
+
+    }
+
+</style>
+
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -263,7 +287,7 @@
   <!-- Username -->
     <div class="form-floating">
       <input value="<?= retrieve_info('username') ?>" name="username" type="text" class="form-control" id="floatingInput js--floatingInput" placeholder="Username">
-      <label for="floatingInput">User name</label>
+      <label class="sr-only" for="floatingInput">User name</label>
     </div>
     <?php if(!empty($errors['username'])):?>
       <div class="text-danger"><?=$errors['username']?></div>
@@ -271,19 +295,27 @@
   <!-- Email -->
     <div class="form-floating my-1">
       <input value="<?= retrieve_info('email') ?>" name="email" type="email" class="form-control" id="floatingInput js--floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <label  for="floatingInput">Email address</label>
     </div>
     <?php if(!empty($errors['email'])):?>
       <div class="text-danger"><?=$errors['email']?></div>
     <?php endif;?>
+
   <!-- Password -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control password" id="floatingPassword js--floatingPassword" placeholder="Password" >
-      <label for="floatingPassword">Password</label>
+      <div class="form-controller">
+        <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword js--floatingPassword">
+        <img src="<?=ROOT?>/assets/images/icons/eye-slash.png"
+                     style="vertical-align: baseline"
+                     id="togglePassword">
+      </div>
+
+      <label  for="floatingPassword">Password</label>
     </div>
     <?php if(!empty($errors['password'])):?>
       <div class="text-danger"><?=$errors['password']?></div>
     <?php endif;?>
+
   <!-- Password Retype -->
     <div class="form-floating my-1">
       <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Retype Password">
@@ -292,6 +324,7 @@
     <?php if(!empty($errors['retype_password'])):?>
       <div class="text-danger"><?=$errors['retype_password']?></div>
     <?php endif;?>
+
 
     <small class="my-2">Already have an account? <a href="login">Login here</a></small>
   <!-- Terms -->
@@ -309,6 +342,7 @@
   </form>
 </main>
 <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
     </body>
 </html>
