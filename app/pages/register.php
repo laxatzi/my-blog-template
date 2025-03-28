@@ -196,6 +196,8 @@
 
     .form-controller {
       display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid #dee2e6;
       background-color: #fff;
       margin-bottom: 7px;
@@ -209,15 +211,21 @@
     .form-controller img {
       width: 30px;
       height: 30px;
-      margin-right: 20px;
+      margin-right: 5px;
+      cursor: pointer;
 
     }
 
-    .form-controller .form-control {
-      padding: 0rem 0rem;
-      border: 1px solid transparent;
 
-    }
+  .form-floating.form-controller > .form-control, .form-floating > .form-control-plaintext, .form-floating > .form-select {
+  height: calc(1.5rem + calc(var(--bs-border-width) * 2));
+  min-height: calc(1.5rem + calc(var(--bs-border-width) * 2));
+  line-height: 1.25;
+  outline: none;
+  border: none;
+}
+
+
 
 </style>
 
@@ -302,13 +310,13 @@
     <?php endif;?>
 
   <!-- Password -->
-    <div class="form-floating my-1">
-      <div class="form-controller">
-        <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword js--floatingPassword">
+    <div class="form-floating form-controller my-1">
+
+        <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Password">
         <img src="<?=ROOT?>/assets/images/icons/eye-slash.png"
                      style="vertical-align: baseline"
-                     id="togglePassword">
-      </div>
+                     id="js--toggleImg">
+
 
       <label  for="floatingPassword">Password</label>
     </div>
@@ -342,6 +350,18 @@
   </form>
 </main>
 <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  let eyeIcon = document.querySelector("#js--toggleImg");
+
+  //let password = document.querySelector("#js--floatingPassword");
+
+
+
+  eyeIcon.onclick = function() {
+
+
+  }
+</script>
 
 
     </body>
