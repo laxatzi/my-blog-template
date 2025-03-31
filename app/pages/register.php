@@ -315,7 +315,7 @@
         <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Password">
         <img src="<?=ROOT?>/assets/images/icons/eye-slash.png"
                      style="vertical-align: baseline"
-                     id="js--toggleImg">
+                     id="js--toggleImg" alt="eye-slash icon">
 
 
       <label  for="floatingPassword">Password</label>
@@ -350,19 +350,30 @@
   </form>
 </main>
 <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <script>
-  let eyeIcon = document.querySelector("#js--toggleImg");
+  let eyeIcon = document.querySelector("#js--toggleImg");//js--toggleImg
+  let password = document.querySelector("#js--floatingPassword");//js--floatingPassword
 
-  //let password = document.querySelector("#js--floatingPassword");
+if (password) {
+    let password = password.value;
+    console.log(password);
+} else {
+    console.error("Password input field not found!");
+}
 
 
-
-  eyeIcon.onclick = function() {
-
-
+const typeToggler = function() {
+  if (password.type == "password") {
+  password.type = "text";
+  } else if (password.type == "text") {
+  password.type = "password";
   }
+}
+
+
+  eyeIcon.addEventListener('click', typeToggler);
+
 </script>
-
-
-    </body>
+</body>
 </html>
