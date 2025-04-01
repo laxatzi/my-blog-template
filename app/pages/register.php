@@ -79,8 +79,7 @@
        <!-- Custom styles for this template -->
     <link href="<?=ROOT?>/assets/css/sign-in.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
-    <script src="<?=ROOT?>/assets/js/passVisibilityToggler.js" defer></script>
-
+    <!-- <script src="<?=ROOT?>/assets/js/togglePassword.js" defer></script> -->
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -315,7 +314,8 @@
         <input value="<?= retrieve_info('password') ?>" name="password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Password">
         <img src="<?=ROOT?>/assets/images/icons/eye-slash.png"
                      style="vertical-align: baseline"
-                     id="js--toggleImg" alt="eye-slash icon">
+                     id="js--togglePassword" alt="eye-slash icon"
+                     >
 
 
       <label  for="floatingPassword">Password</label>
@@ -326,8 +326,8 @@
 
   <!-- Password Retype -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Retype Password">
-      <label for="floatingPassword">Retype Password</label>
+      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPasswordRetype js--floatingPasswordRetype" placeholder="Retype Password">
+      <label for="floatingPasswordRetype">Retype Password</label>
     </div>
     <?php if(!empty($errors['retype_password'])):?>
       <div class="text-danger"><?=$errors['retype_password']?></div>
