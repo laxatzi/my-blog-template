@@ -57,7 +57,7 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
-      $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
+      // $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
       $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
@@ -70,7 +70,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-    <script src="<?=ROOT?>/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -356,14 +355,16 @@
   let password = document.querySelector("#js--floatingPassword");//js--floatingPassword
 
 if (password) {
-    let password = password.value;
-    console.log(password);
+    let passwordValue = password.value;
+    console.log(passwordValue);
 } else {
     console.error("Password input field not found!");
 }
 
 
-const typeToggler = function() {
+
+const typeToggler = function(e) {
+  e.preventDefault();
   if (password.type == "password") {
   password.type = "text";
   } else if (password.type == "text") {
