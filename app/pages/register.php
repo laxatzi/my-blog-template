@@ -1,4 +1,5 @@
 <?php
+
   if (!empty($_POST)) {
     // validate
     $errors = [];
@@ -31,6 +32,10 @@
       $errors['password'] = "A password is required";
     } else if(strlen($_POST['password']) < 8) {
       $errors['password'] = "Password must be 8 character or more";
+    }else
+    if($_POST['password'] !== $_POST['retype_password'])
+    {
+      $errors['password'] = "Passwords do not match";
     }
 
 
@@ -58,10 +63,9 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
-      $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
-      $query = "Insert into users (username,email,password,retype_password,role) values (:username,:email,:password,:retype_password,:role)";
+      $query = "Insert into users (username,email,password,retype_password,role) values (:username,:email,:password,:role)";
       db_query($query, $data);
 
       redirect('login');
@@ -78,9 +82,8 @@
     <title>Register | <?=APP_NAME?></title>
     <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
        <!-- Custom styles for this template -->
-    <link href="<?=ROOT?>/assets/css/sign-in.css" rel="stylesheet">
     <link href="<?=ROOT?>/assets/css/main.css" rel="stylesheet">
-    <!-- <script src="<?=ROOT?>/assets/js/togglePassword.js" defer></script> -->
+    <!-- <script src="<php?=//ROOT?>/assets/js/togglePassword.js" defer></script> -->
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
