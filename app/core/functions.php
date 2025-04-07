@@ -56,7 +56,7 @@ function retrieve_checked($key, $default = '')
 
 // Create database
 
-    $query = "CREATE DATABASE IF NOT EXISTS ".DBNAME;
+    $query = "create database if not exists ".DBNAME;
 
     $stmt = $conn->prepare($query);
     $stmt->execute();
