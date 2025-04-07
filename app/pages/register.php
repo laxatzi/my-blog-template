@@ -33,13 +33,14 @@
       $errors['password'] = "Password must be 8 character or more";
     }
 
-    // retype password errors
-    // retype password field should not be empty, and must much password
-    if(empty($_POST['retype_password'])) {
-      $errors['retype_password'] = "Please confirm password!";
-    }
-    else if($_POST['password'] !== $_POST['retype_password']) {
-      $errors['password'] = "Passwords do not match";
+
+    // password retype
+    // password should not be empty, must be identical
+     if(empty($_POST['retype_password'])) {
+      $errors['retype_password'] = "Password must be retyped";
+    } else if($_POST['retype_password'] !== $_POST['password'])
+    {
+      $errors['retype_password'] = "Passwords do not match";
     }
 
     // accept terms errors
@@ -57,10 +58,10 @@
       $data['username'] = $_POST['username'];
       $data['email'] = $_POST['email'];
       $data['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
-      // $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
+      $data['retype_password'] = password_hash($_POST['retype_password'], PASSWORD_DEFAULT);
       $data['role'] = 'user'; // Everyone starts out as a user -- hence the hardcode
 
-      $query = "Insert into users (username,email,password,role) values (:username,:email,:password,:role)";
+      $query = "Insert into users (username,email,password,retype_password,role) values (:username,:email,:password,:retype_password,:role)";
       db_query($query, $data);
 
       redirect('login');
@@ -326,7 +327,7 @@
 
   <!-- Password Retype -->
     <div class="form-floating my-1">
-      <input value="<?= retrieve_info('retype_password') ?>" name="retype-password" type="password" class="form-control" id="floatingPasswordRetype js--floatingPasswordRetype" placeholder="Retype Password">
+      <input value="<?= retrieve_info('retype_password') ?>" name="retype_password" type="password" class="form-control" id="floatingPassword js--floatingPassword" placeholder="Retype Password">
       <label for="floatingPasswordRetype">Retype Password</label>
     </div>
     <?php if(!empty($errors['retype_password'])):?>
